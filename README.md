@@ -17,24 +17,58 @@ Con este proyecto se procura practicar y sacar partido de las herramientas de La
 
 ## ¿Qué se pide?
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+We want to add some functionality to our Parking Manager. We need to link our cars to the user they belong to. For this:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1.-
+We need to store the relationship between users and cars.
 
+### 2.- 
+Create a migration file for the users table. It must have the name, lastname and email of the user. Look at Laravel’s default migration for the users table and make the necessary changes.
 
-### Premium Partners
+### 3.-
+Update the Eloquent models to have the relationship between the users and their cars. Each car belongs to one user, and the users can have many cars.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 4.-
+Our website will have the necessary fields in the main form, to allow us to create a new user while we are creating the new car, or to select an existing user from a combo box if we don’t need to create a new user for the car.
 
+### 5.-
+In the results list, we will show the user that each car is related to.
+
+### 6.-
+We will create another page that will allow users to do an advanced search. It will have the following functionalities:
+
+#### a)
+look for cars that got into the parking lot at a certain date.
+
+#### b)
+look for all the cars of a user.
+
+### 7.-
+Create an API with three endpoints:
+
+#### a)
+one to list all the users with all the cars each user has. The list 
+has to be alphabetically ordered by the last name.
+
+#### b)
+one to get the details of a user. The user id will be passed as a url parameter.
+
+#### c)
+another one to show the latest 10 cars that got into the parking lot.
+
+### 8.-
+Validate the input from the form to create a new car entry:
+
+#### a)
+The brand has to be between 3 and 15 letters long.
+
+#### b)
+The model has to be between 1 and 15 letters long.
+
+#### c)
+The plate has to have 4 digits and 3 letters
+
+###
+If there’s any error, you have to show a message indicating the error’s description.
+
+You must use a Form Request object and customize the error messages.

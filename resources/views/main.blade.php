@@ -7,7 +7,10 @@
     <title>ParkingManager2</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
     <!-- JavaScript Bundle with Popper -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <style>
                   
@@ -151,7 +154,10 @@
         }
         hr{
             margin-left:0px;
-            border-color: #2471A3;
+            border-color: orange;
+            color:orange;
+            background-color: orange;
+            border: 2px solid orange;
         }
 
         .postContent{
@@ -257,6 +263,43 @@
         .navbar-nav{
             margin-left: 10px;
         }
+        .container{
+            margin-top: 20px;
+        }
+     
+        
+        .searchButon{
+         background-color: transparent;
+         border: 0;
+         width: 2px;
+         
+         padding:0px;
+        }
+       
+        .searchBox{
+            width: 600px
+        }
+        .searchBar{
+            padding: 0px 0px 0px 30px;
+            border-radius:  10px 0px 0px 10px;;
+            width: 400px;
+
+        }
+        .searchIcon{
+        margin-left: 0;;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 0px 10px 10px 0px;
+        background-color: #212F3D;
+        color: orange;
+        margin-left: 0px;
+           
+        }
+        .searchIcon:hover{
+            background-color: orange;
+            color: #1C2833;
+        }
+
        
     </style>
 </head>
@@ -270,8 +313,8 @@
                     <div class="navbar-nav">
                     <a class="nav-item nav-link" href="/user">Create User</a>
                     <a class="nav-item nav-link" href="/car">Create Car</a>
-                    <a class="nav-item nav-link" href="/search">Search Car</a>
-                    <a class="nav-item nav-link" href="/asign">Asign Car</a>
+                    <a class="nav-item nav-link" href="/car/search">Search Car</a>
+                    <a class="nav-item nav-link" href="/car/asign">Asign Car</a>
                 </div>
     </nav>
     @yield('content')

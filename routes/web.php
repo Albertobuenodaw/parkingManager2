@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('main');
 });
+
+
+//USER
+Route::get('/user' , [UserController::class,'index'])->name('user-index');
+Route::post('/user',[UserController::class,'store'])->name('user-store');
+
+//CAR
+Route::get('/car' , [CarController::class,'index'])->name('car-index');
+Route::post('/car' , [CarController::class,'store'])->name('car-store');
+Route::get('/car/asign', [CarController::class,'asign'])->name('car-asign');
+Route::get('/car/search', [CarController::class,'search'])->name('car-search');

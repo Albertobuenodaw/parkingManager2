@@ -2,20 +2,20 @@
 
 @section('content')
         <div class="container ">
-                <div class = 'row'>
+                
                     <h1 class = 'text-center'>Asign a Car to a Usuer</h1>
-                </div>
-                <form action='{{route("asignar")}}' method='post'> 
+               
+                <form action='{{route("car-asign")}}' method='post'> 
                 @csrf 
                         <div class='row selects'>
-                            <select name="user" class="col-md-5 form-select">
+                            <select name="user" class="col-md-5 col-lg-5  form-select">
                                 <option selected disabled="true">--Select User</option>
-                                @foreach ($usuarios as $usuario)
+                                @foreach ($users as $user)
                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                 @endforeach
                             </select>
-                            <div class='col-md-2'></div>
-                            <select name="direccion" class="col-md-5 form-select" >
+                            <div class='col-md-2 col-lg-2'></div>
+                            <select name="direccion" class="col-md-5 col-lg-5  form-select" >
                                 <option selected disabled="true">--Select Car</option>
                                 @foreach ($cars as $car )
                                 <option value="{{$car->id}}">{{$car->plate}} - {{$car->brand}} {{$car->model}} </option>

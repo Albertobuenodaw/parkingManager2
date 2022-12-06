@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             
-            $table->unsignedBigInteger('idUsiario');
+            $table->unsignedBigInteger('idUsuario');
             $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();

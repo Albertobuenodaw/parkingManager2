@@ -10,8 +10,9 @@
             <input class="lightRounded" type="text" name="brand" placeholder="Brand here"><br>
             <label for="model">Model:</label><br>
             <input class="lightRounded" type="text" name="model" placeholder="Model here"><br>
+            <hr>
             <label for='user'>Choose user if you want to add an existing one.</label>
-            <select name="user" class="col-md-5 form-select" >
+            <select name="user" class="lightRounded form-select" >
                 <option selected disabled="true">--select User</option>
                 @foreach ($users as $user )
                 <option value="{{$user->id}}">{{$user->name}}</option>

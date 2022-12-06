@@ -1,16 +1,14 @@
 @extends('main')
 @section('content')
-    <div class='container  w-80'>
-        <h1>Search Car</h1>
-
-        <div class="input-group">
-        <div class="form-outline">
-            <input type="search" id="searchBox" class="form-control" />
-            <label class="form-label" for="searchBox">Search Car</label>
-        </div>
-        <button type="button" class="searchButton btn btn-primary">
-            <i class="fas fa-search"></i>
-        </button>
-        </div>
-    </div>
+<div class="container ">
+        <div class=' searchBox'>
+            <form class="formulario row">
+                <label for='searchCar'>Search your car:</label>
+                <input type="search" class="searchBar" placeholder="Search Car" name='searchCar' />
+                <button type='submit' class =searchButon><i class='searchIcon fa fa-search'></i></button>
+            </form>   
+        </div>  
+  
+    
+</div>
 @endsection

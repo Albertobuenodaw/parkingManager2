@@ -22,6 +22,5 @@ class UserController extends Controller
         $user->save();
 
         return redirect('user.index');
-
     }
 }

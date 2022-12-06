@@ -11,6 +11,12 @@ class Car extends Model
     function user(){
         return $this->belongsTo('App/Models/User');
     }
+    protected $fillable = [
+        'plate',
+        'brand',
+        'model',
+    ];
+
 
 
 }

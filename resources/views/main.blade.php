@@ -19,7 +19,7 @@
             /*box-shadow: 2px 2px 10px #D0D0D0;*/
             margin-top: 14px;
         }
-        
+
         .grayBtn{
             background-color: #85929E;
             color:white;
@@ -274,6 +274,9 @@
                     <a class="nav-item nav-link" href="/asign">Asign Car</a>
                 </div>
     </nav>
-        
+    @yield('content')
+    <footer id="footer" >
+        <span class='copyright'> © Alberto Bueno - Server Side Development 2022-2023</span>
+    </footer>
 </body>
 </html>

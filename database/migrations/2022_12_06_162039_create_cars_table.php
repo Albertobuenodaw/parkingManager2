@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('plate')->unique();
             $table->string('brand');
             $table->string('model');
+            
+            $table->unsignedBigInteger('idUsiario');
+            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

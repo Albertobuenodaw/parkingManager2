@@ -33,6 +33,9 @@ We want to add some functionality to our Parking Manager. We need to link our ca
 
 + look for cars that got into the parking lot at a certain date.
 
++ look for all the cars of a user.
+
+
 7.-Create an API with three endpoints:
 
 + a)

@@ -19,7 +19,7 @@
             /*box-shadow: 2px 2px 10px #D0D0D0;*/
             margin-top: 14px;
         }
-
+        
         .grayBtn{
             background-color: #85929E;
             color:white;
@@ -246,19 +246,31 @@
             display: flex;
             flex-direction: column;
         }
+
+        #two{
+            color : orange;
+            font-weight: bold;
+        }
+        .navbar-brand{
+            margin-left: 40px;
+        }
+        .navbar-nav{
+            margin-left: 10px;
+        }
+       
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="/">Users-Posts PROJECT</a>
+                <a class="navbar-brand" href="/">Parking Manager <span id="two">2</span></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                     <a class="nav-item nav-link" href="/user">Create User</a>
-                    <a class="nav-item nav-link" href="/car">Create Car </a>
-                    <a class="nav-item nav-link" href="/search">Search Car o</a>
+                    <a class="nav-item nav-link" href="/car">Create Car</a>
+                    <a class="nav-item nav-link" href="/search">Search Car</a>
                     <a class="nav-item nav-link" href="/asign">Asign Car</a>
                 </div>
     </nav>

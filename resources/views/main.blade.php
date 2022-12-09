@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
     <style>
                   
                   .blueButton{
@@ -304,22 +305,26 @@
     </style>
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="/">Parking Manager <span id="two">2</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/user">Create User</a>
-                    <a class="nav-item nav-link" href="/car">Create Car</a>
-                    <a class="nav-item nav-link" href="/car/search">Search Car</a>
-                    <a class="nav-item nav-link" href="/car/asign">Asign Car</a>
-                </div>
+        <a class="navbar-brand" href="/">Parking Manager <span id="two">2</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/user">Create User</a>
+            <a class="nav-item nav-link" href="/car">Create Car</a>
+            <a class="nav-item nav-link" href="/car/user/">Create Together</a>
+            <a class="nav-item nav-link" href="/car/search">Search Car</a>
+        </div>
     </nav>
+
     @yield('content')
+
     <footer id="footer" >
         <span class='copyright'> © Alberto Bueno - Server Side Development 2022-2023</span>
     </footer>
+
 </body>
 </html>

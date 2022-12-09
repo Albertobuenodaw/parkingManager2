@@ -46,16 +46,32 @@
             }
         </script>
     <div class='container  w-80'>
-    <h1>New Car</h1>
+    <h1>Register your Car</h1>
         <form action='/car' method='post'> 
         @csrf
+            <h2>User</h2>
+            <label for="nombre">Name:</label><br>
+            <input class="lightRounded" type="text" id='name' name="name" placeholder="Name here" ><br>
+            <label for="apellido">Last Name:</label><br>
+            <input class="lightRounded" type="text" id='lastName' name="lastName" placeholder="Last Name here"><br>
+            <label for="email">Email:</label><br>
+            <input class="lightRounded" type="email" id='email'name="email" placeholder="Email here"><br>
+            <hr>
+            <h2>Car</h2>
             <label for="plate">Plate:</label><br>
             <input class="lightRounded" type="text" name="plate" placeholder="Plate here" required><br>
             <label for="brand">Brand:</label><br>
             <input class="lightRounded" type="text" name="brand" placeholder="Brand here"><br>
             <label for="model">Model:</label><br>
             <input class="lightRounded" type="text" name="model" placeholder="Model here"><br>
-     
+            <hr>
+            <label for='user'>Chose a <span id='newUser'>New User</span> or  <span id='existing'>Select anExisting One</span></label>
+            <select name="user" id='user' class="lightRounded form-select mt-2" >
+                <option  value = '0'>No user</option>
+                @foreach ($users as $user )
+                <option value="{{$user->id+1}}">{{$user->name}}</option>
+                @endforeach
+            </select>
             <input type="submit" class = 'greyBlueBtn' value="+ Add Car"> 
             @if (session('message'))
                 <div class='alert alert-success'>{{ session('message') }}</div>

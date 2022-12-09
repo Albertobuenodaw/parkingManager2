@@ -15,13 +15,43 @@ class CarController extends Controller
 
     public function store(Request $request){
         $car = new Car;
-        $car->plate = $request->plate;
-        $car->brand = $request->brand;
-        $car->model = $request->model;
-
+        $car->plate = $request->get('plate');
+        $car->brand = $request->get('brand');
+        $car->model = $request->get('model');
         $car->save();
 
-        return redirect('car.index');
+        return redirect()->route('car-store');
+    }
+
+    public function togetherIndex (){
+        return view('car.together')->with('cars', Car::all())->with('users', User::all());
+    }
+
+    public function together(Request $request){
+        
+            $car = new Car;
+            $car->plate = $request->get('plate');
+            $car->brand = $request->get('brand');
+            $car->model = $request->get('model');
+            $car->save();
+            
+            if($request->user!== 0){
+                $user = new User;
+                $user->name = $request->get('name');
+                $user->lastName = $request->get('lastName');
+                $user->email = $request->get('email');
+                $user->save();
+                
+                $car->update([]);
+            
+            }else{
+                $user = User::findOrFail($request->get('user'));//pilla el id del select
+                $car->save($user);
+            }
+            
+           
+
+        return redirect()->route('car-store');
     }
 
     public function asign(){

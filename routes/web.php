@@ -25,6 +25,10 @@ Route::get('/', function () {
 Route::get('/user' , [UserController::class,'index'])->name('user-index');
 Route::post('/user',[UserController::class,'store'])->name('user-store');
 
+//TOGHETHER
+Route::get('/car/user' , [CarController::class,'togetherIndex'])->name('togetherIndex');
+Route::post('/car/user' , [CarController::class,'together'])->name('togetherIndex');
+
 //CAR
 Route::get('/car' , [CarController::class,'index'])->name('car-index');
 Route::post('/car' , [CarController::class,'store'])->name('car-store');

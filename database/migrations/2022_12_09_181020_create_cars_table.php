@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('plate')->unique();
             $table->string('brand')->nullable();
             $table->string('model')->nullable(); 
-            $table->unsignedBigInteger('idUsuario');
+            $table->unsignedBigInteger('idUsuario')->nullable();
             $table->foreign('idUsuario')->references('id')->on('users');
             $table->timestamps();
         });

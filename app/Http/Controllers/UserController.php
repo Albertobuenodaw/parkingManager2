@@ -21,6 +21,6 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('user.index');
+        return redirect()->route('user-index')->with('message','Success!');
     }
 }

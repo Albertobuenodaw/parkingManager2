@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
-    function user(){
-        return $this->belongsTo('App/Models/User');
-    }
+    
     protected $fillable = [
         'plate',
         'brand',
         'model',
+        'idUsuario'
     ];
 
-
+    function user(){
+        return $this->belongsTo('App/Models/User','idUsuario');
+    }
 
 }

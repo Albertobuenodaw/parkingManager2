@@ -16,12 +16,10 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('plate')->unique();
-            $table->string('brand');
-            $table->string('model');
-            
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable(); 
             $table->unsignedBigInteger('idUsuario');
-            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
+            $table->foreign('idUsuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

@@ -12,12 +12,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function cars(){
-       return $this->hasMany('App/Models/Car');
-    }
-
-
-
     /**
      * The attributes that are mass assignable.
      *
@@ -38,7 +32,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function cars(){
+        return $this->hasMany('App/Models/Car', 'idUsuario');
+     }
     /**
      * The attributes that should be cast.
      *

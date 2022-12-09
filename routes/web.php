@@ -27,10 +27,11 @@ Route::post('/user',[UserController::class,'store'])->name('user-store');
 
 //TOGHETHER
 Route::get('/car/user' , [CarController::class,'togetherIndex'])->name('togetherIndex');
-Route::post('/car/user' , [CarController::class,'together'])->name('togetherIndex');
+Route::post('/car/user' , [CarController::class,'together'])->name('together');
 
 //CAR
 Route::get('/car' , [CarController::class,'index'])->name('car-index');
 Route::post('/car' , [CarController::class,'store'])->name('car-store');
 Route::get('/car/asign', [CarController::class,'asign'])->name('car-asign');
-Route::get('/car/search', [CarController::class,'search'])->name('car-search');
+Route::get('/car/search', [CarController::class,'searchIndex'])->name('car-search-index');
+Route::post('car/search',[CarController::class,'search'])->name('car-search');

@@ -8,7 +8,6 @@
             }
 
             function usersOff(){
-
                 var name = document.getElementById('name');
                 var lastName = document.getElementById('lastName');
                 var email = document.getElementById('email');
@@ -39,15 +38,12 @@
 
                     existing.style.color='white';
                     existing.style.fontWeight='normal';
-                
-
-
                 }
             }
         </script>
     <div class='container  w-80'>
     <h1>Register your Car</h1>
-        <form action='/car' method='post'> 
+        <form action='/car/user' method='post'> 
         @csrf
             <h2>User</h2>
             <label for="nombre">Name:</label><br>
@@ -69,7 +65,7 @@
             <select name="user" id='user' class="lightRounded form-select mt-2" >
                 <option  value = '0'>No user</option>
                 @foreach ($users as $user )
-                <option value="{{$user->id+1}}">{{$user->name}}</option>
+                <option value="{{$user->id}}">{{$user->name}}</option>
                 @endforeach
             </select>
             <input type="submit" class = 'greyBlueBtn' value="+ Add Car"> 

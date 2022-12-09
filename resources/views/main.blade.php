@@ -273,18 +273,19 @@
          background-color: transparent;
          border: 0;
          width: 2px;
-         
+         height:50px ;
          padding:0px;
         }
        
         .searchBox{
+            margin-top: 50px;
             width: 600px
         }
         .searchBar{
             padding: 0px 0px 0px 30px;
             border-radius:  10px 0px 0px 10px;;
             width: 400px;
-
+            height:50px ;
         }
         .searchIcon{
         margin-left: 0;;
@@ -294,6 +295,7 @@
         background-color: #212F3D;
         color: orange;
         margin-left: 0px;
+        margin-bottom: 0px;
            
         }
         .searchIcon:hover{
@@ -301,7 +303,23 @@
             color: #1C2833;
         }
 
-       
+        .table{
+            margin-top: 100px;
+        }
+
+        
+        .limitCell{
+            border-left: 2px solid #4D5D6A;
+        }
+        .darkCell{
+            background-color: #272D32;
+        }
+        .tLCorner{
+            border-radius: 10px 0 0 0;
+        }
+        .tRCorner{
+            border-radius: 0 10px 0 0;
+        }        
     </style>
 </head>
 <body>

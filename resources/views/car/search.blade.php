@@ -9,8 +9,7 @@
             </form>   
         </div>  
   
-        <div class ='row'>
-           
+        <div class ='row'>   
            <table class="table table-striped table-dark">
                <thead>
                    <tr>

@@ -14,6 +14,14 @@ class CarController extends Controller
     }
 
     public function store(Request $request){
+        
+        $request->validate([
+            'plate'=>'required|max:7|regex:/[0-9]{4}[A-Z]{3}/',
+            'brand'=>'required|min:3|max:15',
+            'model'=>'required|min:1|max:15'
+        ]);
+
+
         $car = new Car;
         $car->plate = $request->get('plate');
         $car->brand = $request->get('brand');

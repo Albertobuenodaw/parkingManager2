@@ -319,7 +319,10 @@
         }
         .tRCorner{
             border-radius: 0 10px 0 0;
-        }        
+        }
+        small{
+            color:#d65749;
+        }     
     </style>
 </head>
 <body>

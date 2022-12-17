@@ -13,11 +13,11 @@ class Car extends Model
         'plate',
         'brand',
         'model',
-        'idUsuario'
+        'user_id'
     ];
 
     function user(){
-        return $this->belongsTo('App/Models/User','idUsuario');
+        return $this->belongsTo('App/Models/User');
     }
 
 }

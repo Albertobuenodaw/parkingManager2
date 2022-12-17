@@ -6,20 +6,20 @@
     <h1>New Car</h1>
     <form action='/car' method='post'> 
     @csrf
-        <label for="plate">Plate:</label><br>
-        <input class="lightRounded" type="text" name="plate" placeholder="Plate here" required><br>
+        <label for="plate">Plate<small> (required)</small>:</label><br>
+        <input class="lightRounded" type="text" name="plate" placeholder="4 Numbers, 3 characters" required><br>
         @error('plate')
-            <small>{{$message}}</small>
+            <small class="smallError">{{$message}}</small>
         @enderror
         <br><label for="brand">Brand:</label><br>
-        <input class="lightRounded" type="text" name="brand" placeholder="Brand here"><br>
+        <input class="lightRounded" type="text" name="brand" placeholder="min3, max15 characters"><br>
         @error('brand')
-            <small>{{$message}}</small>
+            <small class="smallError">{{$message}}</small>
         @enderror
         <br><label for="model">Model:</label><br>
-        <input class="lightRounded" type="text" name="model" placeholder="Model here"><br>
+        <input class="lightRounded" type="text" name="model" placeholder="min3, max15 characters"><br>
         @error('model')
-            <small>{{$message}}</small>
+            <small class="smallError">{{$message}}</small>
         @enderror
         <br><input type="submit" class = 'greyBlueBtn' value="+ Add Car"> 
         @if (session('message'))

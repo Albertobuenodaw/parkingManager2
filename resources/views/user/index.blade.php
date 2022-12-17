@@ -4,10 +4,10 @@
     <h1>New User</h1>
         <form action='/user' method='post'> 
         @csrf
-            <label for="nombre">Name:</label><br>
+            <label for="nombre">Name<small>(required)</small>:</label><br>
             <input class="lightRounded" type="text" name="name" placeholder="Name here" value={{old('name')}}><br>
             @error('name')
-                <small style='color: #d65749;'>{{$message}}</small>
+                <small class='.smallError'>{{$message}}</small>
             @enderror
             <br><label for="apellido">Last Name:</label><br>
             <input class="lightRounded" type="text" name="lastName" placeholder="Last Name here" value={{old('lastName')}}><br>

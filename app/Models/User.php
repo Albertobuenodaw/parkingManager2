@@ -33,7 +33,7 @@ class User extends Authenticatable
         'remember_token',
     ];
     public function cars(){
-        return $this->hasMany('App/Models/Car', 'idUsuario');
+        return $this->hasMany('App/Models/Car' );
      }
     /**
      * The attributes that should be cast.

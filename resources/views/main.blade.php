@@ -320,9 +320,12 @@
         .tRCorner{
             border-radius: 0 10px 0 0;
         }
-        small{
+        .smallError{
             color:#d65749;
-        }     
+        } 
+        small{
+            color:white;
+        }    
     </style>
 </head>
 <body>

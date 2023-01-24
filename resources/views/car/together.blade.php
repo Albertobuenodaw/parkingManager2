@@ -41,37 +41,70 @@
                 }
             }
         </script>
-    <div class='container  w-80'>
     <h1>Register your Car</h1>
-        <form action='/car/user' method='post'> 
-        @csrf
-            <h2>User</h2>
-            <label for="nombre">Name:</label><br>
-            <input class="lightRounded" type="text" id='name' name="name" placeholder="Name here" ><br>
-            <label for="apellido">Last Name:</label><br>
-            <input class="lightRounded" type="text" id='lastName' name="lastName" placeholder="Last Name here"><br>
-            <label for="email">Email:</label><br>
-            <input class="lightRounded" type="email" id='email'name="email" placeholder="Email here"><br>
-            <hr>
-            <h2>Car</h2>
-            <label for="plate">Plate:</label><br>
-            <input class="lightRounded" type="text" name="plate" placeholder="Plate here" required><br>
-            <label for="brand">Brand:</label><br>
-            <input class="lightRounded" type="text" name="brand" placeholder="Brand here"><br>
-            <label for="model">Model:</label><br>
-            <input class="lightRounded" type="text" name="model" placeholder="Model here"><br>
-            <hr>
-            <label for='user'>Chose a <span id='newUser'>New User</span> or  <span id='existing'>Select anExisting One</span></label>
-            <select name="user" id='user' class="lightRounded form-select mt-2" >
-                <option  value = '0'>No user</option>
-                @foreach ($users as $user )
-                <option value="{{$user->id}}">{{$user->name}}</option>
-                @endforeach
-            </select>
-            <input type="submit" class = 'greyBlueBtn' value="+ Add Car"> 
-            @if (session('message'))
-                <div class='alert alert-success'>{{ session('message') }}</div>
-            @endif
-        </form>
+    <div class='container  w-80'>
+        <div class='row'>
+            <div class='lg-col-5'>
+                <form action='/car/user' method='post'> 
+                @csrf
+                    <h2>User</h2>
+                    <label for="nombre">Name:</label><br>
+                    <input class="lightRounded" type="text" id='name' name="name" placeholder="Name here" ><br>
+                    <label for="apellido">Last Name:</label><br>
+                    <input class="lightRounded" type="text" id='lastName' name="lastName" placeholder="Last Name here"><br>
+                    <label for="email">Email:</label><br>
+                    <input class="lightRounded" type="email" id='email'name="email" placeholder="Email here"><br>
+                    <hr>
+                    <h2>Car</h2>
+                    <label for="plate">Plate:</label><br>
+                    <input class="lightRounded" type="text" name="plate" placeholder="Plate here" required><br>
+                    <label for="brand">Brand:</label><br>
+                    <input class="lightRounded" type="text" name="brand" placeholder="Brand here"><br>
+                    <label for="model">Model:</label><br>
+                    <input class="lightRounded" type="text" name="model" placeholder="Model here"><br>
+                    <hr>
+                    <label for='user'>Chose a <span id='newUser'>New User</span> or  <span id='existing'>Select an Existing One</span></label>
+                    <select name="user" id='user' class="lightRounded form-select mt-2" >
+                        <option  value = '0'>No user</option>
+                        @foreach ($users as $user )
+                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
+                    </select>
+                    <input type="submit" class = 'greyBlueBtn' value="+ Add Car"> 
+                    @if (session('message'))
+                        <div class='alert alert-success'>{{ session('message') }}</div>
+                    @endif
+                </form>
+            </div>
+            <div class = 'lg-col-7'>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">email</th>
+                        <th scope="col">Car </th>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach ($users as $user)
+                   <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->lastName }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>
+                        <ul>
+                            @foreach ( $user->cars() as $car )
+                            <li>Brand: {{car->brand}} Model: {{car->model}} Plate: {{ car->plate}}</li>
+                            @endforeach
+                        </ul>
+                    </td>
+                   </tr>
+                   @endforeach
+                </tbody>
+                </table>
+            </div>
+        </div>
+       
 </div>
 @endsection

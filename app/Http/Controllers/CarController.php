@@ -66,9 +66,9 @@ class CarController extends Controller
                 $car->user()->save($user);
             }
     
-           
+           $users = User::all();
 
-        return redirect()->route('togetherIndex')->with('message','Success!');;
+        return redirect()->route('togetherIndex')->with('message','Success!')->with('users',$users);
     }
 
     public function asign(){

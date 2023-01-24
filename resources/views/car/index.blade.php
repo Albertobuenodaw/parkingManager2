@@ -7,7 +7,7 @@
     <form action='/car' method='post'> 
     @csrf
         <label for="plate">Plate<small> (required)</small>:</label><br>
-        <input class="lightRounded" type="text" name="plate" placeholder="4 Numbers, 3 characters" required><br>
+        <input class="lightRounded" type="text" name="plate" placeholder="Max 7 characters" required><br>
         @error('plate')
             <small class="smallError">{{$message}}</small>
         @enderror

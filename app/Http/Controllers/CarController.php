@@ -16,7 +16,8 @@ class CarController extends Controller
     public function store(Request $request){
         
         $request->validate([
-            'plate'=>'required|max:7|regex:/[0-9]{4}[A-Z]{3}/',
+            /*'plate'=>'required|max:7|regex:/[0-9]{4}[A-Z]{3}/',*/
+            'plate'=>'required|max:7|',
             'brand'=>'required|min:3|max:15',
             'model'=>'required|min:1|max:15'
         ]);
@@ -28,7 +29,7 @@ class CarController extends Controller
         $car->model = $request->get('model');
         $car->save();
 
-        return redirect()->route('car-index');
+        return redirect()->route('car-index')->with('message','Success!');
     }
 
     public function togetherIndex (){
@@ -43,7 +44,7 @@ class CarController extends Controller
                 $car->plate = $request->get('plate');
                 $car->brand = $request->get('brand');
                 $car->model = $request->get('model');
-                $car->save();
+                //$car->save();
             
                 
                 $user = new User;
@@ -67,7 +68,7 @@ class CarController extends Controller
     
            
 
-        return redirect()->route('together-index')->with('message','Success!');;
+        return redirect()->route('togetherIndex')->with('message','Success!');;
     }
 
     public function asign(){

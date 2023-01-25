@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Car;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::get('users/{id}', function($id) {
+    return User::find($id);
+});
+
+Route::get('cars', function() {
+    return Car::orderBy('created_at', 'desc')->limit(10)->get();
 });

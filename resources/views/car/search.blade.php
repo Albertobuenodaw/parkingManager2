@@ -2,7 +2,7 @@
 @section('content')
 <div class="container ">
         <div class='row searchBox mx-auto'>
-            <form class="formulario row">
+            <form class="formulario row" action={} method='post'>
                 <label for='searchCar'>Search your car:</label>
                 <input type="search" class="searchBar" placeholder="Search Car" name='searchCar' />
                 <button type='submit' class =searchButon><i class='searchIcon fa fa-search'></i></button>

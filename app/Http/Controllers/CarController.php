@@ -23,10 +23,10 @@ class CarController extends Controller
         ]);
 
 
-        $car = new Car;
-        $car->plate = $request->get('plate');
-        $car->brand = $request->get('brand');
-        $car->model = $request->get('model');
+        $plate = $request->get('plate');
+        $brand = $request->get('brand');
+        $model = $request->get('model');
+        $car  = Car::create(['plate' => $plate, 'brand' => $brand, 'model' => $model]);
         $car->save();
 
         return redirect()->route('car-index')->with('message','Success!');

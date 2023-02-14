@@ -34,7 +34,7 @@
                 @forelse($cars as $car)
                     <tbody>
                         <tr>
-                            <td>{{ $car->user->name }}</td>
+                            <td>{{ $car->user->name ?? ""}}</td>
                             <td>{{ $car->plate }}</td>
                             <td>{{ $car->brand }}</td>
                             <td>{{ $car->model }}</td>

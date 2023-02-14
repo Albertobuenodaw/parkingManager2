@@ -92,12 +92,12 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->lastName }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>
+                    <td>@if(!empty($user->cars))
                         <ul>
-                            @foreach ( $user->cars() as $car )
-                            <li>Brand: {{car->brand}} Model: {{car->model}} Plate: {{ car->plate}}</li>
+                            @foreach ( $user->cars as $car )
+                            <li>Brand: {{$car->brand}} Model: {{$car->model}} Plate: {{ $car->plate}}</li>
                             @endforeach
-                        </ul>
+                        </ul>    
                     </td>
                    </tr>
                    @endforeach

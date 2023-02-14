@@ -78,8 +78,31 @@ class CarController extends Controller
     public function searchIndex(){
         return view ('car.search')->with('cars', Car::all())->with('users', User::all());;
     }
-    public function search(){
-        return redirect()->route('car-search');
+    public function search(Request $request){
+        $search = $request->input('search');
+        $date = $request->input('date');
+        $userId = $request->input('user');
+
+        $cars = Car::where('id', '>', 0);
+        
+        if(isset($date)) {
+            $cars->whereDate('created_at', '=', $date);
+        }        
+        if(isset($userId)) {
+            $cars->where('idUsuario', $userId);
+        }
+        if(isset($search)) {
+            $cars->where(function($query) use ($search){
+                $query->where('plate', 'LIKE', "%$search%")
+                    ->orWhere('brand', 'LIKE', "%$search%")
+                    ->orWhere('model', 'LIKE', "%$search%");
+            });
+        }
+
+        $cars = $cars->get();
+        $users = User::all();
+
+        return view('car.search')->with(['cars' => $cars])->with(['users' => $users]);
 
     }
 }

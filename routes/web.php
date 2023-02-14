@@ -20,18 +20,20 @@ Route::get('/', function () {
     return view('main');
 });
 
+Route::controller(UserController::class)->group(function(){
+    Route::get('/user' , [UserController::class,'index'])->name('user-index');
+    Route::post('/user',[UserController::class,'store'])->name('user-store');
+});
 
-//USER
-Route::get('/user' , [UserController::class,'index'])->name('user-index');
-Route::post('/user',[UserController::class,'store'])->name('user-store');
 
-//TOGHETHER
-Route::get('/car/user' , [CarController::class,'togetherIndex'])->name('togetherIndex');
-Route::post('/car/user' , [CarController::class,'together'])->name('together');
 
-//CAR
-Route::get('/car' , [CarController::class,'index'])->name('car-index');
-Route::post('/car' , [CarController::class,'store'])->name('car-store');
-Route::get('/car/asign', [CarController::class,'asign'])->name('car-asign');
-Route::get('/car/search', [CarController::class,'searchIndex'])->name('car-search-index');
-Route::post('car/search',[CarController::class,'search'])->name('car-search');
+Route::controller(CarController::class)->group(function(){
+    Route::get('/car' , [CarController::class,'index'])->name('car-index');
+    Route::post('/car' , [CarController::class,'store'])->name('car-store');
+    Route::get('/car/asign', [CarController::class,'asign'])->name('car-asign');
+    Route::get('/car/search', [CarController::class,'searchIndex'])->name('car-search-index');
+    Route::post('car/search',[CarController::class,'search'])->name('car-search');
+    //TOGHETHER
+    Route::get('/car/user' , [CarController::class,'togetherIndex'])->name('togetherIndex');
+    Route::post('/car/user' , [CarController::class,'together'])->name('together');
+});
